@@ -12,10 +12,6 @@ var toDoList = [String]()
 
 class FirstViewController: UIViewController, UITableViewDelegate {
     
-    
-    
-    
-    
     @IBOutlet var todoListTable: UITableView!
     
     override func viewDidLoad() {
