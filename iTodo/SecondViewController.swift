@@ -10,6 +10,14 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet var itemTextField: UITextField!
+    
+    @IBAction func addItemButton(sender: AnyObject) {
+        toDoList.append(itemTextField.text)
+        itemTextField.text = ""
+        NSUserDefaults.standardUserDefaults().setObject(toDoList, forKey: "toDoList")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +28,14 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool{
+        itemTextField.resignFirstResponder()
+        return true
+    }
 
 }
 
