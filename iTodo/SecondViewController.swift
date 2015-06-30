@@ -34,6 +34,5 @@ class SecondViewController: UIViewController {
         itemTextField.resignFirstResponder()
         return true
     }
-
 }
 
